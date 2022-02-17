@@ -33,33 +33,41 @@ class _DetailsState extends State<Details> {
             const SizedBox(
               height: 20.0,
             ),
-            Text(
-              widget.data!.title,
-              style: const TextStyle(
-                fontWeight: FontWeight.w900,
+            Flexible(
+              child: Text(
+                widget.data!.title,
+                style: const TextStyle(
+                  fontWeight: FontWeight.w900,
+                ),
               ),
             ),
             const SizedBox(
               height: 20.0,
             ),
-            Text(
-              widget.data!.summary,
+            Flexible(
+              child: Text(
+                widget.data!.summary,
+              ),
             ),
             const SizedBox(
               height: 150.0,
             ),
             Row(
               children: [
-                Text(
-                  setDateFormate(),
-                  style: const TextStyle(fontWeight: FontWeight.bold),
+                Flexible(
+                  child: Text(
+                    setDateFormate(),
+                    style: const TextStyle(fontWeight: FontWeight.bold),
+                  ),
                 ),
                 const SizedBox(
                   width: 90.0,
                 ),
-                Text(
-                  widget.data!.subTitle,
-                  style: const TextStyle(fontWeight: FontWeight.bold),
+                Flexible(
+                  child: Text(
+                    widget.data!.subTitle,
+                    style: const TextStyle(fontWeight: FontWeight.bold),
+                  ),
                 )
               ],
             )
