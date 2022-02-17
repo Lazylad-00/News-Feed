@@ -1,0 +1,71 @@
+7898beec0ce4bed3a4f2e2512daecb09bc13189e
+
+nomic api key :- 62572b422534aca61b5a944f92cfd5a1331e9c82
+
+server url :- https://api.nomics.com/v1/prices?key=your-key-here
+
+
+'x-rapidapi-host': 'free-news.p.rapidapi.com',
+      'x-rapidapi-key': 'a5cd5b1941msh8dca192a9110fcap15012djsn5db1497e094c'
+
+// To parse this JSON data, do
+//
+//     final user = userFromJson(jsonString);
+
+import 'dart:convert';
+
+List<User> userFromJson(String str) => List<User>.from(json.decode(str).map((x) => User.fromJson(x)));
+
+String userToJson(List<User> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+
+class User {
+    User({
+        this.dateLong,
+        this.url,
+        this.title,
+        this.subTitle,
+        this.image,
+        this.author,
+        this.language,
+        this.src,
+        this.summary,
+        this.slug,
+    });
+
+    String dateLong;
+    String url;
+    String title;
+    String subTitle;
+    String image;
+    String author;
+    String language;
+    String src;
+    String summary;
+    String slug;
+
+    factory User.fromJson(Map<String, dynamic> json) => User(
+        dateLong: json["dateLong"],
+        url: json["url"],
+        title: json["title"],
+        subTitle: json["sub_title"],
+        image: json["image"],
+        author: json["author"],
+        language: json["language"],
+        src: json["src"],
+        summary: json["summary"],
+        slug: json["slug"],
+    );
+
+    Map<String, dynamic> toJson() => {
+        "dateLong": dateLong,
+        "url": url,
+        "title": title,
+        "sub_title": subTitle,
+        "image": image,
+        "author": author,
+        "language": language,
+        "src": src,
+        "summary": summary,
+        "slug": slug,
+    };
+}
